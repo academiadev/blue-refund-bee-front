@@ -4,3 +4,10 @@
     font-family: Roboto;
     color: purple;
 }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #c2c2c2;
+}
