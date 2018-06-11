@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { EmpresaViewComponent } from './empresa-view/empresa-view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { EmpresaAddComponent } from './empresa-add/empresa-add.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -17,7 +18,8 @@ const appRoutes: Routes = [
     AppComponent,
     LoginComponent,
     EmpresaViewComponent,
-    EmpresaAddComponent
+    EmpresaAddComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
