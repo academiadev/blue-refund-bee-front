@@ -1,9 +1,14 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Validators, FormControl, FormGroup } from '@angular/forms';
+import { environment } from '../../environments/environment';
 import { Router, ActivatedRoute } from '@angular/router';
-// import { LoginDTO } from './../dto/login-dto';
-// import { ToastrService } from 'ngx-toastr';
-// import { TokenDTO } from '../dto/token-dto';
+import { ToastrService } from 'ngx-toastr';
+import { EmpresaService } from '../service/empresa.service';
+import { AuthService } from '../service/auth.service';
+import { OnInit, Component } from '@angular/core';
+import { LoginDTO } from '../dto/login-dto';
+import { TokenDTO } from '../dto/token-dto';
+import { BadCredentialsError } from '../commons/bad-credentials';
+import { AppUserValidator } from './user-validator';
 
 @Component({
   selector: 'app-login',
@@ -15,19 +20,25 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private authService: AuthService,
     private route: ActivatedRoute,
-    // private toaster: ToastrService,
-    // private empresaService: EmpresaService
+    private toaster: ToastrService,
   ) { }
 
   ngOnInit() {
     this.form = new FormGroup({
-      'usuario': new FormControl('', [Validators.minLength(4), Validators.required]),
-      'senha': new FormControl('', [Validators.required])
+      'appUser': new FormControl(
+        '',
+        [
+          Validators.minLength(4), Validators.required,
+          AppUserValidator.hasWhiteSpace
+        ]
+      ),
+      'password': new FormControl('', [Validators.required])
     });
   }
 
-  /* onSubmit(user: LoginDTO) {
+  onSubmit(user: LoginDTO) {
     this.authService.login(user).subscribe((token: TokenDTO) => {
       localStorage.setItem(environment.tokenName, token.access_token);
       const returnUrl = this.route.snapshot.queryParamMap.get('returnUrl');
@@ -35,20 +46,20 @@ export class LoginComponent implements OnInit {
     },
       (e) => {
         if (e instanceof BadCredentialsError) {
-          this.senha.setErrors(e['form']);
+          this.password.setErrors(e['form']);
         } else {
           throw e;
         }
       });
   }
 
-  get usuario() {
-    return this.form.get('usuario');
+  get appUser() {
+    return this.form.get('appUser');
   }
 
 
-  get senha() {
-    return this.form.get('senha');
-  }*/
+  get password() {
+    return this.form.get('password');
+  }
 
 }
