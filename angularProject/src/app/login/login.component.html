@@ -6,27 +6,31 @@
     </header>
     <div class="card-content">
         <div class="content">
-            <div class="field">
-                <label class="label is-small">Email</label>
-                <div class="control">
-                    <input class="input is-shadowless login-input" type="email" placeholder="examplo@gmail.com" value="" autofocus required>
+            <form class="example-class" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+                <div class="field">
+                    <label class="label is-small">Email</label>
+                    <div class="control">
+                        <input class="input is-shadowless login-input" formControlName="appUser" type="email" placeholder="exemplo@gmail.com" value="" autofocus required>
+                    </div>
                 </div>
-            </div>
 
-            <div class="field">
-                <label class="label is-small">Senha</label>
-                <div class="control">
-                    <input class="input is-shadowless login-input" type="password" placeholder="Senha" value="" required>
+                <div class="field">
+                    <label class="label is-small">Senha</label>
+                    <div class="control">
+                        <input class="input is-shadowless login-input" formControlName="password" type="password" placeholder="Senha" value="" required>
+                    </div>
                 </div>
-            </div>
-            <div class="field">
-                <div class="control">
-                    <input class="login-btn" type="submit" value="Enviar">
+                <div class="field">
+                    <div class="control ">
+                        <button type="submit " class="button is-info is-focused crud-btn ">Enviar</button>
+                    </div>
                 </div>
-            </div>
+
+            </form>
+
             <div class="field is-grouped is-grouped-centered sub-title">
                 <p class="control">
-                    <a href="#" class="is-black">ESQUECI MINHA SENHA</a>
+                    <a href="/forgotPassword" class="is-black">ESQUECI MINHA SENHA</a>
                 </p>
                 <p class="control">
                     <a href="/empresaAdd">QUERO ME CADASTRAR</a>

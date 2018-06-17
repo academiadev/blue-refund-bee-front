@@ -14,11 +14,13 @@ export class EmpresaService extends DataService {
 
     public cadastrar(empresa) {
         let requestHeaders = new HttpHeaders();
-        requestHeaders = requestHeaders.set('Nova Empresa', 'empresaTeste'  );
+        requestHeaders = requestHeaders.set('Authorization', 'Bearer ' + localStorage.getItem(environment.tokenName));
 
         console.log(empresa);
 
-        return this.http.post('http://localhost:8086/cadastro/porcodigo/', empresa);
+        return this.http.post('http://localhost:8086/cadastro/porcodigo/', empresa, {
+            headers: requestHeaders
+        } );
     }
 
 }

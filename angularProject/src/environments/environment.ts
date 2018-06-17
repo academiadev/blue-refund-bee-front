@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   backEndUrl: 'http://localhost:8086',
+  tokenName: 'access_token',
   urls: {
     auth: {
       url: 'http://localhost:8080/auth',
