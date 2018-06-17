@@ -6,6 +6,9 @@ import { EmpresaViewComponent } from './empresa-view/empresa-view.component';
 import { RouterModule, Routes } from '@angular/router';
 import { EmpresaAddComponent } from './empresa-add/empresa-add.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent },
@@ -23,7 +26,10 @@ const appRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

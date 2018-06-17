@@ -3,8 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  backEndUrl: 'http://localhost:8086',
+  urls: {
+    auth: {
+      url: 'http://localhost:8080/auth',
+      login: 'http://localhost:8080/auth/login',
+      refresh: 'http://localhost:8080/auth/refresh',
+    },
+    empresa: {
+      url: 'http://localhost:8086/cadastro/porcodigo'
+    }
+  }
 };
+
 
 /*
  * In development mode, to ignore zone related error stack frames such as
