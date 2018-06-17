@@ -21,52 +21,52 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 export function tokenGetter() {
-  const token = localStorage.getItem(environment.tokenName);
-  return token;
+	const token = localStorage.getItem(environment.tokenName);
+	return token;
 }
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    EmpresaViewComponent,
-    EmpresaAddComponent,
-    NavbarComponent,
-    NotFoundComponent
-  ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
-    ToastrModule.forRoot(),
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: tokenGetter,
-        whitelistedDomains: [
-          environment.backEndUrl
-        ],
-        blacklistedRoutes: [
-          environment.urls.auth.url
-        ]
-      }
-    }),
-    RouterModule.forRoot([
-      { path: '', redirectTo: 'login', pathMatch: 'full' },
-      { path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
-      { path: 'empresaAdd', component: EmpresaAddComponent },
-      { path: 'not-found', component: NotFoundComponent },
-      { path: '**', component: NotFoundComponent },
-    ]),
-  ],
-  providers: [
-    EmpresaService,
-    AuthService,
-    AppErrorHandler,
-    AuthGuard,
-    { provide: ErrorHandler, useClass: AppErrorHandler }
-  ],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		LoginComponent,
+		EmpresaViewComponent,
+		EmpresaAddComponent,
+		NavbarComponent,
+		NotFoundComponent
+	],
+	imports: [
+		BrowserModule,
+		HttpClientModule,
+		FormsModule,
+		ReactiveFormsModule,
+		BrowserAnimationsModule,
+		ToastrModule.forRoot(),
+		JwtModule.forRoot({
+			config: {
+				tokenGetter: tokenGetter,
+				whitelistedDomains: [
+					environment.backEndUrl
+				],
+				blacklistedRoutes: [
+					environment.urls.auth.url
+				]
+			}
+		}),
+		RouterModule.forRoot([
+			{ path: '', redirectTo: 'login', pathMatch: 'full' },
+			{ path: 'login', component: LoginComponent, canActivate: [LoginGuard] },
+			{ path: 'empresaAdd', component: EmpresaAddComponent },
+			{ path: 'not-found', component: NotFoundComponent },
+			{ path: '**', component: NotFoundComponent },
+		]),
+	],
+	providers: [
+		EmpresaService,
+		AuthService,
+		AppErrorHandler,
+		AuthGuard,
+		{ provide: ErrorHandler, useClass: AppErrorHandler }
+	],
+	bootstrap: [AppComponent]
 })
 export class AppModule { }

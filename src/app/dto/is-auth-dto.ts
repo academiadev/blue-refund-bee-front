@@ -1,8 +1,8 @@
 export class IsAuthDTO {
 
-    constructor(
-        public isAuth: string
-    ) { }
+		constructor(
+				public isAuth: string
+		) { }
 
 }
 

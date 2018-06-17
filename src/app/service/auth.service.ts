@@ -11,59 +11,59 @@ import { environment } from './../../environments/environment';
 import { Router } from '@angular/router';
 
 @Injectable({
-    providedIn: 'root'
+		providedIn: 'root'
 })
 export class AuthService extends DataService {
 
-    constructor(
-        http: HttpClient,
-        private jwtHelper: JwtHelperService,
-        private router: Router
-    ) {
-        super(environment.urls.auth.url, http);
-    }
+		constructor(
+				http: HttpClient,
+				private jwtHelper: JwtHelperService,
+				private router: Router
+		) {
+				super(environment.urls.auth.url, http);
+		}
 
-    /**
+		/**
      *
      * @url http://localhost:8080/auth/login
      */
-    login(login: LoginDTO): Observable<TokenDTO> {
-        return this.http.post(environment.urls.auth.login, login).pipe(
-            map(res => <TokenDTO>res),
-            catchError(this.handleError)
-        );
-    }
+		login(login: LoginDTO): Observable<TokenDTO> {
+				return this.http.post(environment.urls.auth.login, login).pipe(
+						map(res => <TokenDTO>res),
+						catchError(this.handleError)
+				);
+		}
 
-    logout() {
-        localStorage.removeItem(environment.tokenName);
-        console.log('Usuário deslogado');
-    }
+		logout() {
+				localStorage.removeItem(environment.tokenName);
+				console.log('Usuário deslogado');
+		}
 
-    logoutAndRedirect() {
-        this.logout();
-        this.router.navigate(['/']);
-    }
+		logoutAndRedirect() {
+				this.logout();
+				this.router.navigate(['/']);
+		}
 
-    refresh(): Observable<IsAuthDTO> {
-        return this.http.post(environment.urls.auth.refresh, {}, this.getHeaders()).pipe(
-            map(res => <IsAuthDTO>res)
-        );
-    }
+		refresh(): Observable<IsAuthDTO> {
+				return this.http.post(environment.urls.auth.refresh, {}, this.getHeaders()).pipe(
+						map(res => <IsAuthDTO>res)
+				);
+		}
 
-    isLoggedIn(): boolean {
-        const token = localStorage.getItem(environment.tokenName);
+		isLoggedIn(): boolean {
+				const token = localStorage.getItem(environment.tokenName);
 
-        if (!token) {
-            return false;
-        }
+				if (!token) {
+						return false;
+				}
 
 
-        const isExpired = this.jwtHelper.isTokenExpired(token);
-        return !isExpired;
-    }
+				const isExpired = this.jwtHelper.isTokenExpired(token);
+				return !isExpired;
+		}
 
-    toObject<T>(obj: any): T {
-        return <T>obj;
-    }
+		toObject<T>(obj: any): T {
+				return <T>obj;
+		}
 
 }
