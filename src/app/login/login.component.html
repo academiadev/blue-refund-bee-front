@@ -1,44 +1,44 @@
 <div class="card login-card">
-    <header class="card-header login-header-card">
-        <p class="card-header-title is-centered login-title">
-            Reembolso ContaAzul
-        </p>
-    </header>
-    <div class="card-content">
-        <div class="content">
-            <form class="example-class" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
-                <div class="field">
-                    <label class="label is-small">Email</label>
-                    <div class="control">
-                        <input class="input is-shadowless login-input" formControlName="appUser" type="email" placeholder="exemplo@gmail.com" value="" autofocus required>
-                    </div>
-                </div>
+	<header class="card-header login-header-card">
+		<p class="card-header-title is-centered login-title">
+			Reembolso ContaAzul
+		</p>
+	</header>
+	<div class="card-content">
+		<div class="content">
+			<form class="example-class" [formGroup]="form" (ngSubmit)="onSubmit(form.value)">
+				<div class="field">
+					<label class="label is-small">Email</label>
+					<div class="control">
+						<input class="input is-shadowless login-input" formControlName="appUser" type="email" placeholder="exemplo@gmail.com" value="" autofocus required>
+					</div>
+				</div>
 
-                <div class="field">
-                    <label class="label is-small">Senha</label>
-                    <div class="control">
-                        <input class="input is-shadowless login-input" formControlName="password" type="password" placeholder="Senha" value="" required>
-                    </div>
-                </div>
-                <div class="field">
-                    <div class="control ">
-                        <button type="submit " class="button is-info is-focused crud-btn ">Enviar</button>
-                    </div>
-                </div>
+				<div class="field">
+					<label class="label is-small">Senha</label>
+					<div class="control">
+						<input class="input is-shadowless login-input" formControlName="password" type="password" placeholder="Senha" value="" required>
+					</div>
+				</div>
+				<div class="field">
+					<div class="control ">
+						<button type="submit " class="button is-info is-focused crud-btn ">Enviar</button>
+					</div>
+				</div>
 
-            </form>
+			</form>
 
-            <div class="field is-grouped is-grouped-centered sub-title">
-                <p class="control">
-                    <a href="/forgotPassword" class="is-black">ESQUECI MINHA SENHA</a>
-                </p>
-                <p class="control">
-                    <a href="/empresaAdd">QUERO ME CADASTRAR</a>
-                </p>
-            </div>
+			<div class="field is-grouped is-grouped-centered sub-title">
+				<p class="control">
+					<a href="/forgotPassword" class="is-black">ESQUECI MINHA SENHA</a>
+				</p>
+				<p class="control">
+					<a href="/empresaAdd">QUERO ME CADASTRAR</a>
+				</p>
+			</div>
 
 
-        </div>
-    </div>
+		</div>
+	</div>
 
 </div>

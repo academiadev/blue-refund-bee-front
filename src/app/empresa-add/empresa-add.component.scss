@@ -1,79 +1,79 @@
 .crud-card {
-    width: 433px;
-    height: 569px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 0.5rem;
-    margin-bottom: 0.5rem;
-    border-radius: 3px;
-    border-color: black;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
-    box-shadow: 0 2px 5px 0 var(--black-26);
-    font-family: 'Roboto';
+	width: 433px;
+	height: 569px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0.5rem;
+	margin-bottom: 0.5rem;
+	border-radius: 3px;
+	border-color: black;
+	background-color: #ffffff;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+	box-shadow: 0 2px 5px 0 var(--black-26);
+	font-family: 'Roboto';
 }
 
 .crud-header-card {
-    width: 100%;
-    height: 60.9px;
-    background-color: #2687e9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 0%;
+	width: 100%;
+	height: 60.9px;
+	background-color: #2687e9;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0%;
 }
 
 .crud-content {
-    height: 362px;
+	height: 362px;
 }
 
 .crud-title {
-    width: 244.6px;
-    height: 60.5px;
-    font-family: 'Roboto';
-    font-size: 20px;
-    font-weight: 500;
-    text-align: center;
-    color: #ffffff;
-    align-self: center;
-    text-overflow: clip;
+	width: 244.6px;
+	height: 60.5px;
+	font-family: 'Roboto';
+	font-size: 20px;
+	font-weight: 500;
+	text-align: center;
+	color: #ffffff;
+	align-self: center;
+	text-overflow: clip;
 }
 
 .crud-btn {
-    width: 100%;
-    height: 36px;
-    border-radius: 2px;
-    background-color: #2687e9;
-    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
-    font-family: 'Roboto';
-    font-size: 16px;
-    letter-spacing: 0.5px;
-    text-align: center;
-    color: #ffffff;
-    align-self: center;
+	width: 100%;
+	height: 36px;
+	border-radius: 2px;
+	background-color: #2687e9;
+	box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.24), 0 0 2px 0 rgba(0, 0, 0, 0.12);
+	font-family: 'Roboto';
+	font-size: 16px;
+	letter-spacing: 0.5px;
+	text-align: center;
+	color: #ffffff;
+	align-self: center;
 }
 
 .is-black {
-    color: black;
+	color: black;
 }
 
 .crud-input {
-    width: 100%;
-    background: transparent;
-    border-top: transparent !important;
-    border-left: transparent !important;
-    border-right: transparent !important;
-    border-bottom: 3px solid !important;
-    color: #2687e9;
-    box-shadow: none;
+	width: 100%;
+	background: transparent;
+	border-top: transparent !important;
+	border-left: transparent !important;
+	border-right: transparent !important;
+	border-bottom: 3px solid !important;
+	color: #2687e9;
+	box-shadow: none;
 }
 
 label {
-    font-weight: 500;
-    color: #363636;
-    box-shadow: none;
+	font-weight: 500;
+	color: #363636;
+	box-shadow: none;
 }
 
 .block {
-    display: block;
+	display: block;
 }
