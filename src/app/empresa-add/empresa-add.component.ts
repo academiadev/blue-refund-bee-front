@@ -6,7 +6,7 @@ import { EmpresaDTO } from '../dto/empresa-dto';
 @Component({
 	selector: 'app-empresa-add',
 	templateUrl: './empresa-add.component.html',
-	styleUrls: ['./empresa-add.component.css']
+	styleUrls: ['./empresa-add.component.scss']
 })
 
 export class EmpresaAddComponent implements OnInit {
