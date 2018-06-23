@@ -1,12 +1,12 @@
 @import "../settings/_color.scss";
 
 @mixin highlight() {
-  border: 2px solid $color-primary-light;
+  box-shadow: 0px 0px 0px 1px $color-primary-light;
+  border-color: $color-primary-light;  
 }
 
 input:focus {
   @include highlight();
-  box-shadow: none;
 }
 
 
