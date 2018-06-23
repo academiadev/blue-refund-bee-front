@@ -11,6 +11,6 @@ input:focus {
 
 
 button:focus {
-  @include highlight();
-  box-shadow: none;
+  // @include highlight();
+  // box-shadow: inset 5em 1em gold;
 }
